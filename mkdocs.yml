@@ -1,3 +1,21 @@
 site_name: Tyler's Knowledge Base
+site_url: https://docs.tylerharrison.dev/
+nav:
+    - Home: index.md
+    - Docker: docker.md
+    - Kubernetes: kubernetes.md
+    - Linux: linux.md
+    - Python: python.md
+    - CTF/Hacking: hacking.md
+    - Cybersecurity: cybersecurity.md
+    - Networking: networking.md
+    - Self Hosting:
+        - Hosting Services: self-hosting/hosting.md
+        - Reverse Proxy: self-hosting/reverse-proxy.md
+        - Home Assistant: self-hosting/home-assistant.md
+        - Plex: self-hosting/plex.md
+        - Pi-hole: self-hosting/pi-hole.md
+        - WireGuard: self-hosting/wireguard.md
+    - Miscellaneous: misc.md
 theme:
   name: material
