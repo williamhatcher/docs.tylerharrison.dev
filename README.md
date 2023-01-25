@@ -30,10 +30,10 @@ To get started with this project, you will need the following prerequisites:
 
     ```bash
     cd tylers-knowledge-base
-    docker-compose up --build
+    docker-compose up --build -d
     ```
 
-3. Access the website by opening `http://localhost:8000` in your web browser
+3. Access the website by opening `http://localhost:8080` in your web browser
 
 ## Contribute
 
