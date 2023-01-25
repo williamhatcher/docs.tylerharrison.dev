@@ -5,6 +5,7 @@ services:
     volumes:
       - ./site:/app/site
     restart: "no"
+    container_name: kb-mkdocs
   httpd:
     image: httpd:2.4-alpine
     ports:
@@ -12,3 +13,4 @@ services:
     volumes:
       - ./site:/usr/local/apache2/htdocs
     restart: "unless-stopped"
+    container_name: kb-httpd
