@@ -18,4 +18,9 @@ nav:
         - WireGuard: self-hosting/wireguard.md
     - Miscellaneous: misc.md
 theme:
-  name: material
+    name: material
+    palette:
+        scheme: slate
+        accent: orange
+extra_css:
+    - stylesheets/extra.css
