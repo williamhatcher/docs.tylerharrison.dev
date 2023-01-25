@@ -6,6 +6,7 @@ services:
       - ./site:/app/site
     restart: "no"
     container_name: kb-mkdocs
+    pull_policy: build
   httpd:
     image: httpd:2.4-alpine
     ports:
