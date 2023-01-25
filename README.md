@@ -28,7 +28,7 @@ To get started with this project, you will need the following prerequisites:
 2. Build the container
 
     ```bash
-    cd tylers-knowledge-base
+    cd docs.tylerharrison.dev
     docker-compose up --build -d
     ```
 
