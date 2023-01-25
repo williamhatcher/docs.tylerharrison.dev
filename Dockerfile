@@ -1,5 +1,5 @@
 FROM python:3.9-alpine
+RUN pip install mkdocs mkdocs-material
 COPY . /app
 WORKDIR /app
-RUN pip install -r requirements.txt
 CMD ["mkdocs", "build", "--clean"]
