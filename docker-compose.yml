@@ -1,0 +1,13 @@
+version: '3'
+services:
+  mkdocs:
+    build: .
+    volumes:
+      - ./site:/app/site
+    restart: "no"
+  httpd:
+    image: httpd:2.4-alpine
+    ports:
+      - "8000:80"
+    volumes:
+      - ./site:/usr/local/apache2/htdocs
