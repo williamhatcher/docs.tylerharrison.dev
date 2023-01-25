@@ -16,7 +16,6 @@ To get started with this project, you will need the following prerequisites:
 
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
-- [mkdocs](https://www.mkdocs.org/)
 
 ## Usage
 
