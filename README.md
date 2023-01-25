@@ -23,7 +23,7 @@ To get started with this project, you will need the following prerequisites:
 1. Clone the repository
 
     ```bash
-    git clone https://github.com/<YOUR-USERNAME>/tylers-knowledge-base.git
+    git clone https://github.com/tyleraharrison/docs.tylerharrison.dev.git
     ```
 
 2. Build the container
