@@ -1,13 +1,14 @@
 version: '3'
 services:
-  mkdocs:
+  kb-mkdocs:
     build: .
+    image: tyleraharrison/kb-mkdocs:latest
     volumes:
       - ./site:/app/site
     restart: "no"
     container_name: kb-mkdocs
     pull_policy: build
-  httpd:
+  kb-httpd:
     image: httpd:2.4-alpine
     ports:
       - "8080:80"
@@ -15,3 +16,5 @@ services:
       - ./site:/usr/local/apache2/htdocs
     restart: "unless-stopped"
     container_name: kb-httpd
+    depends_on:
+      - kb-mkdocs
