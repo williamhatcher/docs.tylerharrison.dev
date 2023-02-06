@@ -1,3 +1,3 @@
 # Python
 
-Under Construction
+A comprehensive guide to the Python programming language.

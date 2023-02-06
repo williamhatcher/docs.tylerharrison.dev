@@ -1,3 +1,3 @@
 # Home Assistant
 
-Under Construction
+A comprehensive guide to the popular home automation platform.

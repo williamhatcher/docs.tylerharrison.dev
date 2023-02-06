@@ -1,6 +1,6 @@
 # Docker
 
-Collection of useful Docker commands and utilities
+Collection of useful Docker commands and utilities. Learn all about Docker, from the basics to advanced topics.
 
 ## Automated Install Script
 

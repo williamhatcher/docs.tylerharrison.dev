@@ -3,13 +3,14 @@ site_url: https://docs.tylerharrison.dev/
 nav:
     - Home: index.md
     - Docker: docker.md
+    - Git: git.md
     - Kubernetes: kubernetes.md
     - Linux: linux.md
     - Python: python.md
     - CTF/Hacking: hacking.md
     - Cybersecurity: cybersecurity.md
     - Networking: networking.md
-    - Self Hosting:
+    - Homelab:
         - Hosting Services: self-hosting/hosting.md
         - Reverse Proxy: self-hosting/reverse-proxy.md
         - Home Assistant: self-hosting/home-assistant.md
@@ -25,13 +26,15 @@ theme:
         toggle:
             icon: material/brightness-4
             name: Switch to light mode
-        accent: orange
+        primary: indigo
+        accent: indigo
     # Palette toggle for light mode
     -   scheme: default
         toggle:
             icon: material/brightness-7 
             name: Switch to dark mode
-        accent: orange
+        primary: indigo
+        accent: indigo
 
 extra_css:
     - stylesheets/extra.css

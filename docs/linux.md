@@ -1,5 +1,7 @@
 # Linux
 
+Tips, tricks, and tutorials for using Linux and its various distributions.
+
 ## Debian APT Mirrors
 
 I ran into a strange issue where Debian kept trying to pull from mirrors I never specified like `debian.gtisc.gatech.edu`. Turns out, there is another file where mirrors are stored:

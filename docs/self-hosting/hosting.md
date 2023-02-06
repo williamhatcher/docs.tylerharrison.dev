@@ -1,3 +1,3 @@
 # Hosting Services
 
-Under Construction
+A list of useful cloud platforms for hosting your own website, email, and other services.

@@ -1,3 +1,3 @@
 # Miscellaneous
 
-Under Construction
+A catch-all category for everything else.
