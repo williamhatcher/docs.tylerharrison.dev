@@ -1,0 +1,13 @@
+version: '3'
+services:
+  kb-mkdocs-dev:
+    image: python:3.10
+    volumes:
+      - ./docs:/app/docs
+      - ./mkdocs.yml:/app/mkdocs.yml
+    restart: "unless-stopped"
+    container_name: kb-mkdocs-dev
+    working_dir: /app
+    ports:
+      - 8000:8000
+    command: bash -c "pip install mkdocs mkdocs-material && mkdocs serve -a 0.0.0.0:8000"
