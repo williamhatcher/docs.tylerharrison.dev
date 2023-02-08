@@ -1,5 +1,8 @@
 # Welcome to Tyler's Knowledge Base
 
+!!! warning "Disclaimer"
+    This is a work in progress, so check back often for updates. If you have any suggestions, feel free to open an issue or pull request on [GitHub](https://github.com/tyleraharrison/docs.tylerharrison.dev).
+
 A collection of useful tips, tricks, guides and things I've learned. This is a work in progress, so check back often for updates. If you have any suggestions, feel free to open an issue or pull request on [GitHub](https://github.com/tyleraharrison/docs.tylerharrison.dev).
 
 I will also add documentation for projects that I have worked on, such as [my personal website](https://tylerharrison.dev), [hardware hacking](#categories) and [my home lab](#categories).

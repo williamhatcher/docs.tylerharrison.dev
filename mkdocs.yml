@@ -29,6 +29,9 @@ theme:
         - navigation.tracking
         - navigation.tabs
         - navigation.indexes
+        - navigation.top
+        - toc.integrate
+        - toc.follow
     palette:
     # Palette toggle for dark mode
     -   scheme: slate
@@ -44,6 +47,11 @@ theme:
             name: Switch to dark mode
         primary: indigo
         accent: indigo
+
+markdown_extensions:
+    - admonition
+    - pymdownx.details
+    - pymdownx.superfences
 
 extra_css:
     - stylesheets/extra.css
