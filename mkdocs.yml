@@ -1,5 +1,12 @@
 site_name: Tyler's Knowledge Base
 site_url: https://docs.tylerharrison.dev/
+repo_url: https://github.com/tyleraharrison/docs.tylerharrison.dev
+repo_name: docs.tylerharrison.dev
+site_description: A collection of notes and guides for various topics.
+site_author: Tyler Harrison
+remote_branch: main
+edit_uri: 'edit/main/docs/'
+
 nav:
     - Home: index.md
     - Docker: docker.md
@@ -22,10 +29,12 @@ nav:
         - cheatsheets/index.md
         - Proxmox: cheatsheets/proxmox.md
     - Miscellaneous: misc.md
+
 theme:
     name: material
     icon:
         logo: material/book-open-variant
+        repo: fontawesome/brands/github
     favicon: assets/images/favicon.png
     features:
         - navigation.instant
@@ -35,6 +44,8 @@ theme:
         - navigation.top
         - toc.integrate
         - toc.follow
+        - content.action.edit
+        - content.action.view
     palette:
     # Palette toggle for dark mode
     -   scheme: slate
