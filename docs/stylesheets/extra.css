@@ -1,4 +1,8 @@
-/* Change header color */
-/* :root {
-	--md-primary-fg-color: #db6505;
-} */
+/* Change mkdocs-material dark slate theme font color to light blue */
+/* [data-md-color-scheme="slate"]{ */
+[data-md-color-scheme="slate"] .md-typeset a {
+  color: #6ea1ff;
+  }
+[data-md-color-scheme="slate"] .md-nav--lifted > .md-nav__list > .md-nav__item--active a{
+  color: #6ea1ff;
+}

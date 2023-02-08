@@ -3,23 +3,31 @@ site_url: https://docs.tylerharrison.dev/
 nav:
     - Home: index.md
     - Docker: docker.md
-    - Git: git.md
-    - Kubernetes: kubernetes.md
     - Linux: linux.md
+    - Git: git.md
     - Python: python.md
-    - CTF/Hacking: hacking.md
+    - CTF/Hacking: ctf-hacking.md
     - Cybersecurity: cybersecurity.md
     - Networking: networking.md
-    - Homelab:
+    - Self Hosting:
+        - Overview: self-hosting/overview.md
         - Hosting Services: self-hosting/hosting.md
         - Reverse Proxy: self-hosting/reverse-proxy.md
         - Home Assistant: self-hosting/home-assistant.md
         - Plex: self-hosting/plex.md
         - Pi-hole: self-hosting/pi-hole.md
         - WireGuard: self-hosting/wireguard.md
+    - Kubernetes: kubernetes.md
+    - Cheatsheets:
+        - Overview: cheatsheets/overview.md
+        - Proxmox: cheatsheets/proxmox.md
     - Miscellaneous: misc.md
 theme:
     name: material
+    features:
+        - navigation.instant
+        - navigation.tracking
+        - navigation.tabs
     palette:
     # Palette toggle for dark mode
     -   scheme: slate

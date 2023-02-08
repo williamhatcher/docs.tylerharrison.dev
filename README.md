@@ -1,6 +1,6 @@
 # Tyler's Knowledge Base
 
-Welcome to my personal knowledge base, a collection of useful information and tips I've compiled for personal reference and to share with others. This project is a mind-dump of every useful thing I know and serves as a go-to resource for quick reference.
+Welcome to my personal knowledge base, a collection of useful information and tips I've compiled for personal reference and to share with others. This project is a mind-dump of every useful thing I know and serves as a go-to resource for quick reference. Not every piece of information is original, but I've tried to provide as much context as possible to give credit where credit is due.
 
 ## Table of Contents
 

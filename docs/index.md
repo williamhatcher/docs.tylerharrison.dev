@@ -5,19 +5,22 @@ A collection of useful tips, tricks, guides and things I've learned. This is a w
 I will also add documentation for projects that I have worked on, such as [my personal website](https://tylerharrison.dev), [hardware hacking](#categories) and [my home lab](#categories).
 
 ## Categories
+
 - [Home](index.md)
 - [Docker](docker.md)
-- [Kubernetes](kubernetes.md)
 - [Linux](linux.md)
 - [Python](python.md)
 - [CTF/Hacking](ctf-hacking.md)
 - [Cybersecurity](cybersecurity.md)
 - [Networking](networking.md)
-- [Homelab](self-hosting/hosting.md)
+- [Self Hosting](self-hosting/overview.md)
     - [Hosting Services](self-hosting/hosting.md)
     - [Reverse Proxy](self-hosting/reverse-proxy.md)
     - [Home Assistant](self-hosting/home-assistant.md)
     - [Plex](self-hosting/plex.md)
     - [Pi-hole](self-hosting/pi-hole.md)
     - [WireGuard](self-hosting/wireguard.md)
-- [Miscellaneous](miscellaneous.md)
+- [Kubernetes](kubernetes.md)
+- [Cheatsheets](cheatsheets/overview.md)
+    - [Proxmox](cheatsheets/proxmox.md)
+- [Miscellaneous](misc.md)
