@@ -10,7 +10,7 @@ nav:
     - Cybersecurity: cybersecurity.md
     - Networking: networking.md
     - Self Hosting:
-        - Overview: self-hosting/overview.md
+        - self-hosting/index.md
         - Hosting Services: self-hosting/hosting.md
         - Reverse Proxy: self-hosting/reverse-proxy.md
         - Home Assistant: self-hosting/home-assistant.md
@@ -19,7 +19,7 @@ nav:
         - WireGuard: self-hosting/wireguard.md
     - Kubernetes: kubernetes.md
     - Cheatsheets:
-        - Overview: cheatsheets/overview.md
+        - cheatsheets/index.md
         - Proxmox: cheatsheets/proxmox.md
     - Miscellaneous: misc.md
 theme:
@@ -28,6 +28,7 @@ theme:
         - navigation.instant
         - navigation.tracking
         - navigation.tabs
+        - navigation.indexes
     palette:
     # Palette toggle for dark mode
     -   scheme: slate
