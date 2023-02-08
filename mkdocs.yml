@@ -24,6 +24,9 @@ nav:
     - Miscellaneous: misc.md
 theme:
     name: material
+    icon:
+        logo: material/book-open-variant
+    favicon: assets/images/favicon.png
     features:
         - navigation.instant
         - navigation.tracking
@@ -54,4 +57,4 @@ markdown_extensions:
     - pymdownx.superfences
 
 extra_css:
-    - stylesheets/extra.css
+    - assets/stylesheets/extra.css
