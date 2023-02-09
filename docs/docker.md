@@ -4,13 +4,45 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 
 ## Automated Install Script
 
-```bash
-apt update; \
-apt install curl; \
-curl -fsSL https://get.docker.com -o get-docker.sh; \
-chmod +x ./get-docker.sh; \
-./get-docker.sh
-```
+=== "Debian"
+
+    ```bash
+    apt update; \
+    apt install curl; \
+    curl -fsSL https://get.docker.com -o get-docker.sh; \
+    chmod +x ./get-docker.sh; \
+    ./get-docker.sh
+    ```
+
+=== "Ubuntu"
+
+    ```bash
+    sudo apt update; \
+    sudo apt install curl; \
+    curl -fsSL https://get.docker.com -o get-docker.sh; \
+    chmod +x ./get-docker.sh; \
+    sudo ./get-docker.sh
+    ```
+
+=== "Fedora/RHEL"
+
+    ```bash
+    sudo dnf update; \
+    sudo dnf install curl; \
+    curl -fsSL https://get.docker.com -o get-docker.sh; \
+    chmod +x ./get-docker.sh; \
+    sudo ./get-docker.sh
+    ```
+
+=== "Arch"
+
+    ```bash
+    sudo pacman -Syu; \
+    sudo pacman -S docker; \
+    sudo systemctl start docker; \
+    sudo systemctl enable docker
+    sudo usermod -aG docker $USER
+    ```
 
 ## Composerize
 
