@@ -1,3 +1,4 @@
 site/
 gen.py
 .vscode/
+.cache/

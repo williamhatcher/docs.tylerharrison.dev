@@ -62,6 +62,9 @@ theme:
         primary: indigo
         accent: indigo
 
+plugins: 
+    - social
+
 markdown_extensions:
     - admonition
     - pymdownx.details
