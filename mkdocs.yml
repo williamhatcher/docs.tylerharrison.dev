@@ -64,6 +64,7 @@ theme:
 
 plugins: 
     - social
+    - search
 
 markdown_extensions:
     - admonition
