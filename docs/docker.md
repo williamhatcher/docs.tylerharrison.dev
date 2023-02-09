@@ -5,7 +5,11 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 ## Automated Install Script
 
 ```bash
-apt update; apt install curl; curl -fsSL https://get.docker.com -o get-docker.sh; chmod +x ./get-docker.sh; ./get-docker.sh
+apt update; \
+apt install curl; \
+curl -fsSL https://get.docker.com -o get-docker.sh; \
+chmod +x ./get-docker.sh; \
+./get-docker.sh
 ```
 
 ## Composerize

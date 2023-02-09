@@ -46,6 +46,7 @@ theme:
         - toc.follow
         - content.action.edit
         - content.action.view
+        - content.code.copy
     palette:
     # Palette toggle for dark mode
     -   scheme: slate
