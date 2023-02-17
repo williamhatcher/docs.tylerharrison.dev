@@ -44,6 +44,17 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
     sudo usermod -aG docker $USER
     ```
 
+=== "Alpine"
+
+    ```bash
+    echo "http://ftp.halifax.rwth-aachen.de/alpine/v3.16/main" >> /etc/apk/repositories; \
+    echo "http://ftp.halifax.rwth-aachen.de/alpine/v3.16/community" >> /etc/apk/repositories; \
+    apk update; \
+    apk add docker docker-cli-compose; \
+    rc-update add dockerboot; \
+    service docker start
+    ```
+
 ## Composerize
 
 Convert Docker run commands to `docker-compose.yml` files
