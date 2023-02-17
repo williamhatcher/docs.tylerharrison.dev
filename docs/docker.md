@@ -55,6 +55,27 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
     service docker start
     ```
 
+## Portainer
+
+Portainer is a web-based Docker management tool. It allows you to manage your Docker containers, images, volumes, networks and more! Portainer is meant to be as simple to deploy as it is to use. It consists of a single container that can run on any Docker engine (Docker for Linux and Docker for Windows are supported).
+
+### Install/Uninstall
+
+Install:
+
+    docker volume create portainer_data; \
+    docker run -d -p 8000:8000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest
+
+Uninstall:
+
+    docker stop portainer; \
+    docker rm portainer; \
+    docker volume rm portainer_data
+
+### Misc Notes
+
+- Disable "Use SSO" if using Authentik
+
 ## Composerize
 
 Convert Docker run commands to `docker-compose.yml` files
