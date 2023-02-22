@@ -24,7 +24,6 @@ nav:
         - Plex: self-hosting/plex.md
         - Pi-hole: self-hosting/pi-hole.md
         - WireGuard: self-hosting/wireguard.md
-    - Kubernetes: kubernetes.md
     - Cheatsheets:
         - cheatsheets/index.md
         - Proxmox: cheatsheets/proxmox.md

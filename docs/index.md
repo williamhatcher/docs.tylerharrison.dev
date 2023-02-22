@@ -23,7 +23,6 @@ I will also add documentation for projects that I have worked on, such as [my pe
     - [Plex](self-hosting/plex.md)
     - [Pi-hole](self-hosting/pi-hole.md)
     - [WireGuard](self-hosting/wireguard.md)
-- [Kubernetes](kubernetes.md)
 - [Cheatsheets](cheatsheets/index.md)
     - [Proxmox](cheatsheets/proxmox.md)
 - [Miscellaneous](misc.md)
