@@ -52,6 +52,8 @@ Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (s
 
 Now, you should be able to run `apt update` and install packages from the repository without getting the warning message.
 
+Credit: Abhishek Prakash, Jan 2023 ([https://itsfoss.com/key-is-stored-in-legacy-trusted-gpg/](https://itsfoss.com/key-is-stored-in-legacy-trusted-gpg/))
+
 ## Debian APT Mirrors
 
 I ran into a strange issue where Debian kept trying to pull from mirrors I never specified like `debian.gtisc.gatech.edu`. Turns out, there is another file where mirrors are stored:
