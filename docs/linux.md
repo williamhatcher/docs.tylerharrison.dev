@@ -2,6 +2,56 @@
 
 Tips, tricks, and tutorials for using Linux and its various distributions.
 
+## Fixing "Key is stored in legacy trusted.gpg keyring" Issue
+
+If you are getting the following error when trying to install packages (e.g. Slack):
+
+```bash
+W: https://packagecloud.io/slacktechnologies/slack/debian/dists/jessie/InRelease: Key is stored in legacy trusted.gpg keyring (/etc/apt/trusted.gpg), see the DEPRECATION section in apt-key(8) for details.
+```
+
+You can fix it by running:
+
+```bash
+sudo apt-key list
+```
+
+This will show a list of keys stored in your system. Look for the key that is associated with the repository causing the warning message. In the case of Slack, it is `https://packagecloud.io/slacktechnologies/slack/debian/dists/jessie/InRelease`.
+
+```bash
+--------------------
+pub   rsa4096 2014-01-13 [SCEA] [expired: 2019-01-12]
+      418A 7F2F B0E1 E6E7 EABF  6FE8 C2E7 3424 D590 97AB
+uid           [ expired] packagecloud ops (production key) <ops@packagecloud.io>
+
+pub   rsa4096 2016-02-18 [SCEA]
+      DB08 5A08 CA13 B8AC B917  E0F6 D938 EC0D 0386 51BD
+uid           [ unknown] https://packagecloud.io/slacktechnologies/slack (https://packagecloud.io/docs#gpg_signing) <support@packagecloud.io>
+sub   rsa4096 2016-02-18 [SEA]
+```
+
+We need to take the last 8 characters (excluding the space) under the line after pub. If there are multiple pub lines, you can use the one that is not expired. In this case, it is `0386 51BD`.
+
+Now, run the following command to add the GPG key to `/etc/apt/trusted.gpg.d` replacing `<key>` with the key you found in the previous step and `<name>` with the name of the repository (e.g. slack):
+
+```bash
+sudo apt-key export <key> | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/<name>.gpg
+```
+
+Example:
+
+```bash
+sudo apt-key export 038651BD | sudo gpg --dearmour -o /etc/apt/trusted.gpg.d/slack.gpg
+```
+
+You can ignore the error message:
+
+```bash
+Warning: apt-key is deprecated. Manage keyring files in trusted.gpg.d instead (see apt-key(8)).
+```
+
+Now, you should be able to run `apt update` and install packages from the repository without getting the warning message.
+
 ## Debian APT Mirrors
 
 I ran into a strange issue where Debian kept trying to pull from mirrors I never specified like `debian.gtisc.gatech.edu`. Turns out, there is another file where mirrors are stored:
@@ -9,6 +59,8 @@ I ran into a strange issue where Debian kept trying to pull from mirrors I never
 ```bash
 /usr/share/python-apt/templates/Debian.mirrors
 ```
+
+Getting rid of the line with `debian.gtisc.gatech.edu` made the issue happen less frequently, but it looks like Debian sometimes tries to pull from `debian.gtisc.gatech.edu` anyway. This is a complaint I've seen from other people as well.
 
 ## Fix Broken resolv.conf
 
