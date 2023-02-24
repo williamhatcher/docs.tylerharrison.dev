@@ -29,3 +29,47 @@ Forward all traffic from local host to remote host:
 ```bash
 ssh -D <local_port> <remote_user>@<remote_host>
 ```
+
+## Find Which Process is Using a Port
+
+Sometimes you will find youself in a situation where you need to bind to a port (especially when working with Docker) and there is already another process taking it up. There's a few methods to find which process is listening on a port. For these examples we'll be looking for port 80.
+
+### netstat
+
+`netstat` is a command-line utility that displays network connections for both incoming and outgoing traffic. It can display TCP and UDP ports that the computer is listening on, as well as the state of TCP ports.
+
+Package: `net-tools`
+
+```bash
+netstat -ltnp | grep -w ':80'
+```
+
+### lsof
+
+`lsof` stands for "list open files". It is a command-line utility that displays information about files that are open by processes. It can display the process ID, user ID, file descriptor, and the path to the file.
+
+Package: `lsof`
+
+```bash
+lsof -i :80
+```
+
+### fuser
+
+`fuser` is a command-line utility that displays the process ID of processes that are using files or sockets. It can display the process ID, user ID, file descriptor, and the path to the file.
+
+Package: `psmisc`
+
+```bash
+fuser 80/tcp
+```
+
+### ss
+
+`ss` is a command-line utility that displays information about sockets. It can display TCP and UDP ports that the computer is listening on, as well as the state of TCP ports.
+
+Package: `iproute2`
+
+```bash
+ss -ltnp | grep -w ':80'
+```
