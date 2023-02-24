@@ -1,6 +1,8 @@
-# Tyler's Knowledge Base
+# The ATHENA Project
 
-Welcome to my personal knowledge base, a collection of useful information and tips I've compiled for personal reference and to share with others. This project is a mind-dump of every useful thing I know and serves as a go-to resource for quick reference. Not every piece of information is original, but I've tried to provide as much context as possible to give credit where credit is due.
+> **A Technical Handbook of Essential Niche Advice**
+
+The ATHENA Project is an online archive and technical handbook of essential niche advice I've put together. It contains a curated collection of specialized knowledge, tips, and tricks that I have compiled for personal reference and to share with others. The website is designed to be a go-to resource for quick reference on a range of niche topics, from technology to personal interests. Not every piece of information is original, but I've made sure to provide citations to give credit where credit is due.
 
 ## Table of Contents
 
@@ -44,6 +46,6 @@ The information provided in this project is for general informational purposes o
 
 ## Conclusion
 
-Thank you for checking out my personal knowledge base. I hope you find this project useful and informative.
+Thank you for checking out The ATHENA Project. I hope you find this project useful and informative.
 
 Please let me know if you have any feedback or questions.

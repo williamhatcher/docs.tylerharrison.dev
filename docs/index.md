@@ -1,9 +1,13 @@
-# Welcome to Tyler's Knowledge Base
+# Welcome to the ATHENA Project
 
 !!! warning "Disclaimer"
     This is a work in progress, so check back often for updates. If you have any suggestions, feel free to open an issue or pull request on [GitHub](https://github.com/tyleraharrison/docs.tylerharrison.dev).
 
-A collection of useful tips, tricks, guides and things I've learned. This is a work in progress, so check back often for updates. If you have any suggestions, feel free to open an issue or pull request on [GitHub](https://github.com/tyleraharrison/docs.tylerharrison.dev).
+> **A Technical Handbook of Essential Niche Advice**
+
+Athena was the goddess of wisdom, courage, inspiration, mathematics, strategy, the arts, crafts, and skill
+
+The ATHENA Project is an online archive and technical handbook of essential niche advice I've put together. It contains a curated collection of specialized knowledge, tips, and tricks that I have compiled for personal reference and to share with others. The website is designed to be a go-to resource for quick reference on a range of niche topics, from technology to personal interests. Not every piece of information is original, but I've made sure to provide citations to give credit where credit is due.
 
 I will also add documentation for projects that I have worked on, such as [my personal website](https://tylerharrison.dev), [hardware hacking](#categories) and [my home lab](#categories).
 
