@@ -160,3 +160,27 @@ ps aux | grep <application_name>
 ```
 
 Replace `<application_name>` with the name of the application you want to find. This command will display a list of processes that match the specified application name. The first column of the output will be the PID of the running application.
+
+## Pipewire GNOME Audio Slider/Hotkeys Not Working
+
+If you are using Pipewire and the Gnome audio slider/hotkeys iare not working, you can try to fix it by running:
+
+```bash
+systemctl restart --user pipewire pipewire-session-manager
+```
+
+Something that may or may not have helped me was:
+
+```bash
+sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+```
+
+and setting `wifi.powersave = 3` to `wifi.powersave = 2`.
+
+I also changed the Bluetooth HID timeout:
+
+```bash
+sudo nano /etc/bluetooth/input.conf
+```
+
+and set `IdleTimeout=0`. Then restart `pipewire` and `pipewire-session-manager again`. I am unsure of which of these things fixed the issue (if any of them did).
