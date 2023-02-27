@@ -171,7 +171,9 @@ Replace `<application_name>` with the name of the application you want to find. 
 
 ## Useful Applications
 
-### KDE Gnome-like Screenshots
+### Graphical Applications
+
+#### KDE Gnome-like Screenshots
 
 If you are using KDE and want to take screenshots like you would in Gnome (i.e. select a region to screenshot and it will automatically copy to clipboard), you can install `flameshot` and then set the following in System Settings > Workspace > Shortcuts > Add Command:
 
@@ -179,61 +181,63 @@ I used the following command: `flameshot gui -c` for `Take Screenshot (Copy to C
 
 You can also use the following commands:
 
-#### Save to File
+##### Save to File
 
 - `flameshot gui -p ~/Pictures/Screenshots` for `Take Screenshot`
 - `flameshot full -p ~/Pictures/Screenshots` for `Take Screenshot (Full Screen)`
 - `flameshot screen -p ~/Pictures/Screenshots` for `Take Screenshot (Current Screen)`
 
-#### Copy to Clipboard
+##### Copy to Clipboard
 
 - `flameshot gui -c` for `Take Screenshot (Copy to Clipboard)`
 - `flameshot full -c` for `Take Screenshot (Full Screen) (Copy to Clipboard)`
 - `flameshot screen -c` for `Take Screenshot (Current Screen) (Copy to Clipboard)`
 
-### thefuck
+### Command-Line Applications
+
+#### thefuck
 
 `thefuck` is a command-line tool that corrects your previous command. Think of it as a CLI `auto-correct` feature. It works by analyzing the output of the previous command and then running the correct command based on the output.
 
 GitHub Link: [https://github.com/nvbn/thefuck](https://github.com/nvbn/thefuck)
 
-### zoxide
+#### zoxide
 
 `zoxide` is a command-line tool that helps you navigate your filesystem. It keeps track of the directories you use the most and makes it easy to jump to them from anywhere. It is essentially a smarter `cd` command.
 
 GitHub Link: [https://github.com/ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
 
-### fzf
+#### fzf
 
 `fzf` is a command-line fuzzy finder. It can be used to search through files and run commands. It is similar to `Ctrl+R` in Bash, but it is much more powerful. It can also be used to search through the output of other commands.
 
 GitHub Link: [https://github.com/junegunn/fzf](https://github.com/junegunn/fzf)
 
-### bat
+#### bat
 
 `bat` is a `cat` clone with syntax highlighting and Git integration. It is similar to `cat` but it is much more powerful. It can be used to view files and it can also be used to search through files. It is written in Rust which leads to it being very performant.
 
 GitHub Link: [https://github.com/sharkdp/bat](https://github.com/sharkdp/bat)
 
-### tldr
+#### tldr
 
 `tldr` is a collection of community-maintained pages similar to that of man pages, but much simpler. It is a great alternative to `man` pages because it is much easier to read and it is more concise. It's colorfully formatted and it is easy to navigate.
 
 GitHub Link: [https://github.com/tldr-pages/tldr](https://github.com/tldr-pages/tldr)
 
-### scc
+#### scc
 
 `scc` is a tool that counts lines of code in a directory. It can be used to quickly get a rough estimate of how many lines of code are in a project. It also shows cost to develop and complexity.
 
 GitHub Link: [https://github.com/boyter/scc](https://github.com/boyter/scc)
 
-### exa
+#### exa
 
 `exa` is a replacement for `ls` that is written in Rust. It can display file-type icons, colors, file/folder info and has several output formats - tree, grid or list. It is also much more colorful and it is easier to read.
 
 GitHub Link: [https://github.com/ogham/exa](https://github.com/ogham/exa)
 
-### duf
+#### duf
 
 `duf` is a disk usage/du utility for showing info about mounted disks. It is similar to `du` but it is more colorful and it is easier to read. It also has a progress bar that shows how much space is used.
 
