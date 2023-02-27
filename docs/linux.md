@@ -2,7 +2,9 @@
 
 Tips, tricks, and tutorials for using Linux and its various distributions.
 
-## Fixing "Key is stored in legacy trusted.gpg keyring" Issue
+## Common Issues and Solutions
+
+### Fixing "Key is stored in legacy trusted.gpg keyring" Issue
 
 If you are getting the following error when trying to install packages (e.g. Slack):
 
@@ -54,7 +56,7 @@ Now, you should be able to run `apt update` and install packages from the reposi
 
 Credit: Abhishek Prakash, Jan 2023 ([https://itsfoss.com/key-is-stored-in-legacy-trusted-gpg/](https://itsfoss.com/key-is-stored-in-legacy-trusted-gpg/))
 
-## Debian APT Mirrors
+### Debian APT Mirrors
 
 I ran into a strange issue where Debian kept trying to pull from mirrors I never specified like `debian.gtisc.gatech.edu`. Turns out, there is another file where mirrors are stored:
 
@@ -64,7 +66,7 @@ I ran into a strange issue where Debian kept trying to pull from mirrors I never
 
 Getting rid of the line with `debian.gtisc.gatech.edu` made the issue happen less frequently, but it looks like Debian sometimes tries to pull from `debian.gtisc.gatech.edu` anyway. This is a complaint I've seen from other people as well.
 
-## Fix Broken resolv.conf
+### Fix Broken resolv.conf
 
 If you are having issues with DNS resolution, you can try to fix it by running:
 
@@ -76,31 +78,37 @@ sudo rm /etc/resolv.conf
 sudo ln -sv /run/systemd/resolve/resolv.conf /etc/resolv.conf
 ```
 
-## KDE Gnome-like Screenshots
+### Pipewire GNOME Audio Slider/Hotkeys Not Working
 
-If you are using KDE and want to take screenshots like you would in Gnome (i.e. select a region to screenshot and it will automatically copy to clipboard), you can install `flameshot` and then set the following in System Settings > Workspace > Shortcuts > Add Command:
+If you are using Pipewire and the Gnome audio slider/hotkeys iare not working, you can try to fix it by running:
 
-I used the following command: `flameshot gui -c` for `Take Screenshot (Copy to Clipboard)`
+```bash
+systemctl restart --user pipewire pipewire-session-manager
+```
 
-You can also use the following commands:
+Something that may or may not have helped me was:
 
-### Save to File
+```bash
+sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
+```
 
-- `flameshot gui -p ~/Pictures/Screenshots` for `Take Screenshot`
-- `flameshot full -p ~/Pictures/Screenshots` for `Take Screenshot (Full Screen)`
-- `flameshot screen -p ~/Pictures/Screenshots` for `Take Screenshot (Current Screen)`
+and setting `wifi.powersave = 3` to `wifi.powersave = 2`.
 
-### Copy to Clipboard
+I also changed the Bluetooth HID timeout:
 
-- `flameshot gui -c` for `Take Screenshot (Copy to Clipboard)`
-- `flameshot full -c` for `Take Screenshot (Full Screen) (Copy to Clipboard)`
-- `flameshot screen -c` for `Take Screenshot (Current Screen) (Copy to Clipboard)`
+```bash
+sudo nano /etc/bluetooth/input.conf
+```
 
-## Linux Disown
+and set `IdleTimeout=0`. Then restart `pipewire` and `pipewire-session-manager again`. I am unsure of which of these things fixed the issue (if any of them did).
+
+## Useful Commands
+
+### Linux Disown
 
 The `disown` command is used to remove a job from the current shell's list of jobs. This is useful if you want to run a command in the background and then exit the shell without killing the process.
 
-### Disown Running Application
+#### Disown Running Application
 
 Here is an example of how to use `disown`:
 
@@ -141,7 +149,7 @@ Here is an example of how to use `disown`:
 
 At this point, you can safely close the terminal or log out of the system without worrying about the `sleep` command being terminated. The `sleep` command will continue running in the background until it completes or is terminated by some other means.
 
-### Find Running Application After Linux Disown
+#### Find Running Application After Linux Disown
 
 To find a running application that has been disowned in Linux, you can use the `pgrep` command along with the name of the application.
 
@@ -161,26 +169,76 @@ ps aux | grep <application_name>
 
 Replace `<application_name>` with the name of the application you want to find. This command will display a list of processes that match the specified application name. The first column of the output will be the PID of the running application.
 
-## Pipewire GNOME Audio Slider/Hotkeys Not Working
+## Useful Applications
 
-If you are using Pipewire and the Gnome audio slider/hotkeys iare not working, you can try to fix it by running:
+### KDE Gnome-like Screenshots
 
-```bash
-systemctl restart --user pipewire pipewire-session-manager
-```
+If you are using KDE and want to take screenshots like you would in Gnome (i.e. select a region to screenshot and it will automatically copy to clipboard), you can install `flameshot` and then set the following in System Settings > Workspace > Shortcuts > Add Command:
 
-Something that may or may not have helped me was:
+I used the following command: `flameshot gui -c` for `Take Screenshot (Copy to Clipboard)`
 
-```bash
-sudo nano /etc/NetworkManager/conf.d/default-wifi-powersave-on.conf
-```
+You can also use the following commands:
 
-and setting `wifi.powersave = 3` to `wifi.powersave = 2`.
+#### Save to File
 
-I also changed the Bluetooth HID timeout:
+- `flameshot gui -p ~/Pictures/Screenshots` for `Take Screenshot`
+- `flameshot full -p ~/Pictures/Screenshots` for `Take Screenshot (Full Screen)`
+- `flameshot screen -p ~/Pictures/Screenshots` for `Take Screenshot (Current Screen)`
 
-```bash
-sudo nano /etc/bluetooth/input.conf
-```
+#### Copy to Clipboard
 
-and set `IdleTimeout=0`. Then restart `pipewire` and `pipewire-session-manager again`. I am unsure of which of these things fixed the issue (if any of them did).
+- `flameshot gui -c` for `Take Screenshot (Copy to Clipboard)`
+- `flameshot full -c` for `Take Screenshot (Full Screen) (Copy to Clipboard)`
+- `flameshot screen -c` for `Take Screenshot (Current Screen) (Copy to Clipboard)`
+
+### thefuck
+
+`thefuck` is a command-line tool that corrects your previous command. Think of it as a CLI `auto-correct` feature. It works by analyzing the output of the previous command and then running the correct command based on the output.
+
+GitHub Link: [https://github.com/nvbn/thefuck](https://github.com/nvbn/thefuck)
+
+### zoxide
+
+`zoxide` is a command-line tool that helps you navigate your filesystem. It keeps track of the directories you use the most and makes it easy to jump to them from anywhere. It is essentially a smarter `cd` command.
+
+GitHub Link: [https://github.com/ajeetdsouza/zoxide](https://github.com/ajeetdsouza/zoxide)
+
+### fzf
+
+`fzf` is a command-line fuzzy finder. It can be used to search through files and run commands. It is similar to `Ctrl+R` in Bash, but it is much more powerful. It can also be used to search through the output of other commands.
+
+GitHub Link: [https://github.com/junegunn/fzf](https://github.com/junegunn/fzf)
+
+### bat
+
+`bat` is a `cat` clone with syntax highlighting and Git integration. It is similar to `cat` but it is much more powerful. It can be used to view files and it can also be used to search through files. It is written in Rust which leads to it being very performant.
+
+GitHub Link: [https://github.com/sharkdp/bat](https://github.com/sharkdp/bat)
+
+### tldr
+
+`tldr` is a collection of community-maintained pages similar to that of man pages, but much simpler. It is a great alternative to `man` pages because it is much easier to read and it is more concise. It's colorfully formatted and it is easy to navigate.
+
+GitHub Link: [https://github.com/tldr-pages/tldr](https://github.com/tldr-pages/tldr)
+
+### scc
+
+`scc` is a tool that counts lines of code in a directory. It can be used to quickly get a rough estimate of how many lines of code are in a project. It also shows cost to develop and complexity.
+
+GitHub Link: [https://github.com/boyter/scc](https://github.com/boyter/scc)
+
+### exa
+
+`exa` is a replacement for `ls` that is written in Rust. It can display file-type icons, colors, file/folder info and has several output formats - tree, grid or list. It is also much more colorful and it is easier to read.
+
+GitHub Link: [https://github.com/ogham/exa](https://github.com/ogham/exa)
+
+### duf
+
+`duf` is a disk usage/du utility for showing info about mounted disks. It is similar to `du` but it is more colorful and it is easier to read. It also has a progress bar that shows how much space is used.
+
+GitHub Link: [https://github.com/muesli/duf](https://github.com/muesli/duf)
+
+## Credits
+
+- [CLI tools you won't be able to live without, Alicia Sykes](https://dev.to/lissy93/cli-tools-you-cant-live-without-57f6)
