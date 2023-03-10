@@ -102,6 +102,42 @@ sudo nano /etc/bluetooth/input.conf
 
 and set `IdleTimeout=0`. Then restart `pipewire` and `pipewire-session-manager again`. I am unsure of which of these things fixed the issue (if any of them did).
 
+## Raspberry Pi Headless SSH Setup
+
+1. Create an empty file named `ssh` in the boot partition of the SD card.
+
+    ```bash
+    touch (location to boot partition)/ssh
+    ```
+
+2. Configure SSH password for new user. Prior to late 2022, the default user/pass was `pi/raspberry`. Now, there is no default password. Instead, we need to make a file called `userconf`. We then either need to generate a password or use the old default one.
+
+    ```bash
+    sudo nano (location to boot partition)/userconf
+    ```
+
+    If you want to generate a password, run:
+
+    ```bash
+    echo 'yourpassword' | openssl passwd -6 -stdin
+    ```
+
+    This will output a hash that you can use in the `userconf` file. The `userconf` file should look like this:
+
+    ```bash
+    pi:yourpasswordhash
+    ```
+
+    If you want to use the old default password, the `userconf` file should look like this:
+
+    ```bash
+    pi:$6$6jHfJHU59JxxUfOS$k9natRNnu0AaeS/S9/IeVgSkwkYAjwJfGuYfnwsUoBxlNocOn.5yIdLRdSeHRiw8EWbbfwNSgx9/vUhu0NqF50
+    ```
+
+3. Insert the SD card into the Raspberry Pi and boot it up.
+
+4. Connect to the Raspberry Pi via SSH. The default hostname is `raspberrypi`.
+
 ## Useful Commands
 
 ### Linux Disown
