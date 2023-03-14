@@ -138,6 +138,10 @@ and set `IdleTimeout=0`. Then restart `pipewire` and `pipewire-session-manager a
 
 4. Connect to the Raspberry Pi via SSH. The default hostname is `raspberrypi`.
 
+## Install Linux VM on Android
+
+[https://github.com/sylirre/vmConsole](https://github.com/sylirre/vmConsole)
+
 ## Useful Commands
 
 ### Linux Disown

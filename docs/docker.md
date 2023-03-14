@@ -50,6 +50,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
     echo "http://ftp.halifax.rwth-aachen.de/alpine/v3.16/main" >> /etc/apk/repositories; \
     echo "http://ftp.halifax.rwth-aachen.de/alpine/v3.16/community" >> /etc/apk/repositories; \
     apk update; \
+    apk add openrc; \
     apk add docker docker-cli-compose; \
     rc-update add docker default; \
     service docker start
