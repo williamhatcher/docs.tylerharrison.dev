@@ -12,3 +12,29 @@ init-hook="from pylint.config import find_pylintrc; import os, sys; sys.path.app
 ```
 
 This will add the root of your project to the Python path, which will allow Pylint to find the files you are importing.
+
+## Useful Python Libraries
+
+Various Python libraries that I have found useful sorted by category.
+
+### Data Structures
+
+- [pydlib](https://pypi.org/project/pydlib/) - Crawls a nested structure and returns the value(s) at the specified path. Uses a dot-separated string to specify the path.
+
+    Example:
+
+    ```python
+    >>> import pydlib as dl
+
+    >>> dictionary = {
+    >>>   'path': {
+    >>>       'to': {
+    >>>          'nested': {
+    >>>             'field': 42
+    >>>           }
+    >>>        }
+    >>>    }
+    >>> }
+    >>> dl.get(dictionary, path='path.to.nested.field', default=0)
+    42
+    ```
