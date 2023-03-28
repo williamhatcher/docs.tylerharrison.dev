@@ -127,11 +127,19 @@ These instructions are based on the [PCIe Passthrough](https://pve.proxmox.com/w
 2. Click on the `Shell` button.
 3. Run the following command:
 
+    Intel:
+
     ```bash
     sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 intel_iommu=on iommu=pt initcall_blacklist=sysfb_init"/' /etc/default/grub
     ```
 
-    This will add the `intel_iommu=on iommu=pt initcall_blacklist=sysfb_init` parameters to the `GRUB_CMDLINE_LINUX_DEFAULT` variable in the `/etc/default/grub` file.
+    AMD:
+
+    ```bash
+    sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 amd_iommu=on iommu=pt initcall_blacklist=sysfb_init"/' /etc/default/grub
+    ```
+
+    This will add the `intel_iommu=on iommu=pt initcall_blacklist=sysfb_init` parameters to the `GRUB_CMDLINE_LINUX_DEFAULT` variable in the `/etc/default/grub` file, or the `amd_iommu=on iommu=pt initcall_blacklist=sysfb_init` parameters if you are using an AMD CPU.
 
 4. Run the following command:
 
