@@ -19,6 +19,7 @@ nav:
     - Self Hosting:
         - self-hosting/index.md
         - Hosting Services: self-hosting/hosting.md
+        - Proxmox: self-hosting/proxmox.md
         - Reverse Proxy: self-hosting/reverse-proxy.md
         - Home Assistant: self-hosting/home-assistant.md
         - Plex: self-hosting/plex.md
