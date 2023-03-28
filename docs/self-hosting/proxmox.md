@@ -128,7 +128,7 @@ These instructions are based on the [PCIe Passthrough](https://pve.proxmox.com/w
 3. Run the following command:
 
     ```bash
-    sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 intel_iommu=on iommu=pt initcall_blacklist=sysfb_init"/' /etc/default/grub
+    sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 intel_iommu=on iommu=pt initcall_blacklist=sysfb_init"/' /etc/default/grub
     ```
 
     This will add the `intel_iommu=on iommu=pt initcall_blacklist=sysfb_init` parameters to the `GRUB_CMDLINE_LINUX_DEFAULT` variable in the `/etc/default/grub` file.
