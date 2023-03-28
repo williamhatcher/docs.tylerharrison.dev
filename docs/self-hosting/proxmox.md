@@ -110,3 +110,37 @@ chmod a+rwx /dev/bus/usb/001/007
 ```
 
 I am almost certain that this is not the correct way to do this, but it worked for me.
+
+### PCIe Passthrough
+
+PCIe passthrough is a way to pass a PCI device to a VM or LXC. This is useful for passing through a GPU, a NIC, or other devices that you need to bypass the host OS.
+
+These instructions are based on the [PCIe Passthrough](https://pve.proxmox.com/wiki/PCI_Passthrough) page on the Proxmox wiki.
+
+!!! warning "Warning"
+    This is a very advanced feature and can cause issues if not done correctly. Please make sure you understand what you are doing before proceeding.
+
+!!! info "Note"
+    This feature has a much higher success rate when using UEFI rather than BIOS (OVMF rather than SeaBIOS).
+
+1. Go to the Proxmox web interface and click on the node that your VM is on.
+2. Click on the `Shell` button.
+3. Run the following command:
+
+    ```bash
+    sudo sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT="\(.*\)"/GRUB_CMDLINE_LINUX_DEFAULT="\1 intel_iommu=on iommu=pt initcall_blacklist=sysfb_init"/' /etc/default/grub
+    ```
+
+    This will add the `intel_iommu=on iommu=pt initcall_blacklist=sysfb_init` parameters to the `GRUB_CMDLINE_LINUX_DEFAULT` variable in the `/etc/default/grub` file.
+
+4. Run the following command:
+
+    ```bash
+    sudo update-grub
+    ```
+
+5. Reboot the host.
+6. Follow the instructions in [#usb-passthrough](#usb-passthrough) to pass the device to the VM, but instead of selecting a USB device, select the PCI device.
+7. If you are using a GPU, you will likely need to remove the display from the `Hardware` tab or set it to `None` in order for the VM to boot correctly. If you only plan on using the GPU for compute rather than display, this is not necessary. You may also need to set the `Primary Display` checkbox in the PCI Device configuration to `True` if you are using a GPU for display.
+8. Start the VM.
+9. If you are using a GPU, you will need to install the GPU drivers in the VM.
