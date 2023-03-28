@@ -8,6 +8,18 @@ TODO: Add installation instructions
 
 ### USB Passthrough
 
+#### VM (Virtual Machines)
+
+1. Go to the Proxmox web interface and click on your VM.
+2. Click on the `Hardware` tab.
+3. Click on the `Add` button and select `USB Device`.
+4. Select the USB device you want to passthrough and click `OK`.
+5. Click on the `Save` button.
+
+If you are using a USB device that is not recognized by the VM, you may need to instead pass the whole USB controller to the VM. To do this, follow the steps above, but instead of selecting a specific USB device, select the USB controller.
+
+#### LXC (Linux Containers)
+
 1. Go to the Proxmox web interface and click on the node that your LXC is on.
 2. Click on the `Shell` button.
 3. Run the following command to get a list of your USB devices:
@@ -82,3 +94,19 @@ TODO: Add installation instructions
     Replace the `189` with the major number you got in the previous step. Replace the `001` and `007` with the `Bus` and `Device` IDs you got in the previous step.
 
     Save and exit the file.
+
+6. Restart the LXC
+
+If you have any issues with the USB device not being recognized like I did, you can try the following on the host:
+
+```bash
+chmod a+rwx /dev/ttyACM0
+```
+
+or if you are using the `Bus` and `Device` IDs:
+
+```bash
+chmod a+rwx /dev/bus/usb/001/007
+```
+
+I am almost certain that this is not the correct way to do this, but it worked for me.
