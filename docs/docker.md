@@ -9,9 +9,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
     ```bash
     apt update; \
     apt install curl; \
-    curl -fsSL https://get.docker.com -o get-docker.sh; \
-    chmod +x ./get-docker.sh; \
-    ./get-docker.sh
+    curl -sSL https://get.docker.com | sh
     ```
 
 === "Ubuntu"
@@ -19,9 +17,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
     ```bash
     sudo apt update; \
     sudo apt install curl; \
-    curl -fsSL https://get.docker.com -o get-docker.sh; \
-    chmod +x ./get-docker.sh; \
-    sudo ./get-docker.sh
+    curl -sSL https://get.docker.com | sh
     ```
 
 === "Fedora/RHEL"
@@ -29,9 +25,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
     ```bash
     sudo dnf update; \
     sudo dnf install curl; \
-    curl -fsSL https://get.docker.com -o get-docker.sh; \
-    chmod +x ./get-docker.sh; \
-    sudo ./get-docker.sh
+    curl -sSL https://get.docker.com | sh
     ```
 
 === "Arch"
