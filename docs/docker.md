@@ -41,8 +41,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 === "Alpine"
 
     ```bash
-    echo "http://ftp.halifax.rwth-aachen.de/alpine/v3.16/main" >> /etc/apk/repositories; \
-    echo "http://ftp.halifax.rwth-aachen.de/alpine/v3.16/community" >> /etc/apk/repositories; \
+    grep -qE '(http|https)://dl-cdn.alpinelinux.org/alpine/.*/community' /etc/apk/repositories || echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories; \
     apk update; \
     apk add openrc; \
     apk add docker docker-cli-compose; \
