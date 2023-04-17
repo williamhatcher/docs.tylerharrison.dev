@@ -44,7 +44,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
     grep -qE '(http|https)://dl-cdn.alpinelinux.org/alpine/.*/community' /etc/apk/repositories || echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories; \
     apk update; \
     apk add openrc; \
-    apk add docker docker-cli-compose; \
+    apk add docker docker-compose; \
     rc-update add docker default; \
     service docker start
     ```
