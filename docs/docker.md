@@ -8,7 +8,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 
     ```bash
     apt update && \
-    apt install curl && \
+    apt install curl -y && \
     curl -sSL https://get.docker.com | sh
     ```
 
@@ -16,7 +16,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 
     ```bash
     sudo apt update && \
-    sudo apt install curl && \
+    sudo apt install curl -y && \
     curl -sSL https://get.docker.com | sh
     ```
 
@@ -24,7 +24,7 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 
     ```bash
     sudo dnf update; \
-    sudo dnf install curl; \
+    sudo dnf install curl -y; \
     curl -sSL https://get.docker.com | sh
     ```
 
