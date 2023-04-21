@@ -7,16 +7,16 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 === "Debian"
 
     ```bash
-    apt update; \
-    apt install curl; \
+    apt update && \
+    apt install curl && \
     curl -sSL https://get.docker.com | sh
     ```
 
 === "Ubuntu"
 
     ```bash
-    sudo apt update; \
-    sudo apt install curl; \
+    sudo apt update && \
+    sudo apt install curl && \
     curl -sSL https://get.docker.com | sh
     ```
 
