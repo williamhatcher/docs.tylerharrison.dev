@@ -8,6 +8,14 @@ A list of commonly used commands for Proxmox.
 sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
 ```
 
+## Fix Slow LXC Login
+
+If a privilleged container is taking a while to get past the login, notably Debian 11, run the following inside the container:
+
+```bash
+systemctl mask systemd-logind
+```
+
 ## Commands
 
 ### VM Management
