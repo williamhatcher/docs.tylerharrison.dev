@@ -2,6 +2,27 @@
 
 A deep dive into the world of networking, from basic concepts to advanced topics.
 
+## Linux Network Interfaces setup
+
+Modify the following file: `/etc/network/interfaces`
+
+### DHCP
+
+```bash
+ auto eth0
+ allow-hotplug eth0
+ iface eth0 inet dhcp
+```
+
+### Static IP
+
+```bash
+auto eth0
+iface eth0 inet static
+    address 192.0.2.7/24
+    gateway 192.0.2.254
+```
+
 ## SSH Tunneling
 
 SSH tunneling is a way to securely connect to a remote server through a local server. This is useful for accessing a remote server that is behind a firewall or NAT. It can also be used to access a remote server that is not directly accessible from the internet.
