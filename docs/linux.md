@@ -6,7 +6,7 @@ Tips, tricks, and tutorials for using Linux and its various distributions.
 
 ### Booting Debian Installer over Serial
 
-Press `H` when at the installer screen and use the following parameters (replace with your intended device, baud-rate and data bits), and then hit `ENTER`:
+Navigate to Install instead of Graphical Install `TAB` (or `H` depending on version) when at the installer screen and use the following parameters (replace with your intended device, baud-rate and data bits), and then hit `ENTER`:
 
 ```bash
 install console=ttyS0,115200n8
