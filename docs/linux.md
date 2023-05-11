@@ -4,6 +4,14 @@ Tips, tricks, and tutorials for using Linux and its various distributions.
 
 ## Common Issues and Solutions
 
+### Booting Debian Installer over Serial
+
+Press `H` when at the installer screen and use the following parameters (replace with your intended device, baud-rate and data bits), and then hit `ENTER`:
+
+```bash
+install console=ttyS0,115200n8
+```
+
 ### Fixing "Key is stored in legacy trusted.gpg keyring" Issue
 
 If you are getting the following error when trying to install packages (e.g. Slack):
