@@ -2,6 +2,59 @@
 
 Tips, tricks, and tutorials for using Linux and its various distributions.
 
+## Quick Reference
+
+### Linux Permissions
+
+Linux permissions are represented by a 10-character string where the first character indicates the type of file (whether it is a file, directory, symbolic link, etc.) and the next 9 characters represent the permissions for the owner, group, and others, respectively. In Linux, permissions are set for three types of users: the owner of the file/directory, the members of the file/directory's group, and all other users (also known as "world" or "others"). Each of the types of users have 3 kinds of permissions: read, write and execute. Below is a table that explains what each character in a Linux permission string represent:
+
+| Number | Permission Type          | Symbol |
+|--------|--------------------------|--------|
+| 0      | No Permission            | ---    |
+| 1      | Execute                  | --x    |
+| 2      | Write                    | -w-    |
+| 3      | Execute + Write          | -wx    |
+| 4      | Read                     | r--    |
+| 5      | Read + Execute           | r-x    |
+| 6      | Read + Write             | rw-    |
+| 7      | Read + Write + Execute   | rwx    |
+
+The numbers are another way to represent the same permission as an octal representation of the string. For instance, `0740` would be `drwxr-----` where `7` is `rwx`, `4` is `r--` and `0` is `---`.
+
+As stated above, the first character indicates the type of file. This character is also known as the file mode or file type indicator. The file type indicator shows whether the file is a regular file, directory, symbolic link, socket, pipe, or other types of files.
+
+The most common file types and their corresponding file type indicators are:
+
+- `-` (a dash) for a regular file
+- `d` for a directory
+- `l` for a symbolic link
+- `s` for a socket
+- `p` for a named pipe (FIFO)
+- `c` for a character device file
+- `b` for a block device file
+
+For example, in the Linux file permission string `-rw-r--r--`, the first character `-` indicates that the file is a regular file. If the file were a directory, the first character would be `d` instead of `-`. The remaining `rw-r--r--` can be divided into 3 parts:
+
+- Owner: `rw-`
+- Group: `r--`
+- Others: `r--`
+
+So in this example, the owner can read and write but the group and the others can only read.
+
+### SSH Folder/File Permissions
+
+The `.ssh` folder is a directory used to store the SSH keys on a Linux system. The default permissions for this folder are usually set to `700`, which means that only the owner of the folder has full read, write, and execute permissions, while members of the group and other users have no permissions at all. This is done to ensure that the SSH keys are kept secure and not accessible by other users on the system.
+
+However, Linux provides a warning about the permissions on the `.ssh` folder because if the permissions are set too loosely (i.e. `755`), it can make the SSH keys and configuration files vulnerable to theft or misuse by unauthorized users. Therefore, it is important to ensure that the permissions on the .ssh folder are set correctly and that only the authorized users have access to it. It is also recommended to use encryption and passphrases for SSH keys to provide an extra layer of security.
+
+| Folder | Permission (octal) | Permission (string) |
+|--------------|--------|--------------|
+|`.ssh` folder | `0700` | `drwx------` |
+|`authorized_keys` | `0600` | `-rw-------` |
+| `id_rsa` (Private key) | `0600` | `-rw-------` |
+| `id_rsa.pub` (Public key) | `0644` | `-rw-r--r--` |
+| `known_hosts` | `0600` | `-rw-------` |
+
 ## Common Issues and Solutions
 
 ### Booting Debian Installer over Serial
