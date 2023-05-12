@@ -16,6 +16,20 @@ If a privilleged container is taking a while to get past the login, notably Debi
 systemctl mask systemd-logind
 ```
 
+## Change Forgotten LXC Password
+
+Attach to the container using the host machine shell (`Shell` tab):
+
+```bash
+lxc-attach -n [lxc-id]
+```
+
+and then change password as usual:
+
+```bash
+passwd
+```
+
 ## Commands
 
 ### VM Management
