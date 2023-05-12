@@ -23,17 +23,17 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 === "Fedora/RHEL"
 
     ```bash
-    sudo dnf update; \
-    sudo dnf install curl; \
+    sudo dnf update && \
+    sudo dnf install curl && \
     curl -sSL https://get.docker.com | sh
     ```
 
 === "Arch"
 
     ```bash
-    sudo pacman -Syu; \
-    sudo pacman -S docker; \
-    sudo systemctl start docker; \
+    sudo pacman -Syu && \
+    sudo pacman -S docker && \
+    sudo systemctl start docker && \
     sudo systemctl enable docker
     sudo usermod -aG docker $USER
     ```
@@ -41,11 +41,11 @@ Collection of useful Docker commands and utilities. Learn all about Docker, from
 === "Alpine"
 
     ```bash
-    grep -qE '(http|https)://dl-cdn.alpinelinux.org/alpine/.*/community' /etc/apk/repositories || echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories; \
-    apk update; \
-    apk add openrc; \
-    apk add docker docker-compose; \
-    rc-update add docker default; \
+    grep -qE '(http|https)://dl-cdn.alpinelinux.org/alpine/.*/community' /etc/apk/repositories || echo 'http://dl-cdn.alpinelinux.org/alpine/latest-stable/community' >> /etc/apk/repositories && \
+    apk update && \
+    apk add openrc && \
+    apk add docker docker-compose && \
+    rc-update add docker default && \
     service docker start
     ```
 
