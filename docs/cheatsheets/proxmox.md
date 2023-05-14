@@ -2,10 +2,12 @@
 
 A list of commonly used commands for Proxmox.
 
+All commands assume root shell. Use `sudo` as needed.
+
 ## Remove Subscription Notice
 
 ```bash
-sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
+sed -Ezi.bak "s/(Ext.Msg.show\(\{\s+title: gettext\('No valid sub)/void\(\{ \/\/\1/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && printf "Restarting Proxmox Web Proxy...\n"; systemctl restart pveproxy.service
 ```
 
 ## Fix Slow LXC Login
