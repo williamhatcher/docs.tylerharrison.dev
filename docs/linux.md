@@ -163,6 +163,16 @@ sudo nano /etc/bluetooth/input.conf
 
 and set `IdleTimeout=0`. Then restart `pipewire` and `pipewire-session-manager again`. I am unsure of which of these things fixed the issue (if any of them did).
 
+## Restart Broken KDE Plasma Shell
+
+Sometimes (especially on the Debian testing branch w/ Nvidia drivers) the KDE Plasma Shell just goes haywire. This is my go-to:
+
+```bash
+kquitapp5 plasmashell && kstart5 plasmashell &
+```
+
+followed by a `disown`. Every now and then, presumably because of how the KDE Plasma desktop is D-Bus enabled, I need to ommit the `&` and instead do `CTRL-Z` followed by the `bg` and `disown` commands. More on that [here](#linux-disown).
+
 ## Raspberry Pi Headless SSH Setup
 
 1. Create an empty file named `ssh` in the boot partition of the SD card.
