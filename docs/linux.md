@@ -173,6 +173,14 @@ kquitapp5 plasmashell && kstart5 plasmashell &
 
 followed by a `disown`. Every now and then, presumably because of how the KDE Plasma desktop is D-Bus enabled, I need to ommit the `&` and instead do `CTRL-Z` followed by the `bg` and `disown` commands. More on that [here](#linux-disown).
 
+## Alpine Not Automounting fstab
+
+Simply run this command:
+
+```shell
+rc-update add netmount boot
+```
+
 ## Raspberry Pi Headless SSH Setup
 
 1. Create an empty file named `ssh` in the boot partition of the SD card.
